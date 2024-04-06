@@ -17,7 +17,7 @@ namespace PassIn.Application.UseCases.Events.GetById
 
             var entity = context.Events.Find(id);
 
-            if (entity is null) throw new PassInException("Event with this id not found.");
+            if (entity is null) throw new NotFoundException("Event with this id not found.");
 
             return new ResponseEventJson()
             {
